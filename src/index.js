@@ -1,8 +1,8 @@
-import {getTracksFromPlaylist,getLikedTracks} from "./spotifyTracksMethods.js";
+import {getLikedTracks,getTracksFromPlaylist} from "./spotifyTracksMethods.js";
 import fs from "fs"
 
 
-// getTracksFromPlaylist("7cTTl6rO4vpCh9IzUmi7IX",100).then((tracks)=>{
+// getTracksFromPlaylistWithLimit("7cTTl6rO4vpCh9IzUmi7IX",100).then((tracks)=>{
 //     storeData(tracks,"tracks.json")
 // })
 
@@ -14,7 +14,7 @@ const storeData = (data, path) => {
     }
 }
 
-getLikedTracks(400).then((tracks)=>{
+getLikedTracks().then((tracks)=>{
     console.log(tracks.length,tracks[0])
     storeData(tracks,"tracks.json")
 })
